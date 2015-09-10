@@ -1,7 +1,9 @@
 **ecdb-vagrant-elasticsearch-cluster**
 ==
 
-Use Vagrant to create an ElasticSearch cluster with a single bash command :  
+Creates a ElasticSearch cluster, with the capability to define the number of nodes to be created on the multi-node cluster, using Vagrant and Centos 7
+
+Create the ElasticSearch cluster with a single bash command:  
 
 ```
 vagrant up
