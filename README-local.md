@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 ecdb-vagrant-elasticsearch-cluster
 ==================================
 
 Create an ElasticSearch cluster with a single bash command :
+=======
+**ecdb-vagrant-elasticsearch-cluster**
+==
+
+Creates a ElasticSearch cluster, with the capability to define the number of nodes to be created on the multi-node cluster, using Vagrant and Centos 7
+
+Create the ElasticSearch cluster with a single bash command:  
+>>>>>>> 9944bf0d660bd4b9aadc7c505495e91bcdac8926
 
 ```
 vagrant up
@@ -10,9 +19,15 @@ vagrant up
 **Programs, plugins, libs and versions information**
 
 | Program, plugin, lib              | Version     | How to use it                             |
+<<<<<<< HEAD
 | --------------------------------- | ----------- | ----------------------------------------- |
 | ElasticSearch                     | 1.4.3       | [http://www.elasticsearch.org/guide/](http://www.elasticsearch.org/guide/) |
 | Java (openjdk-7-jre)              | 1.7.0_25    |                                           |
+=======
+| --------------------------------- | ----------- | --------------------------- |
+| ElasticSearch                     | 1.7.1       | [ElasticSearch Docs](https://www.elastic.co/guide) |
+| Java (java-1.7.0-openjdk)         | 1.7.0_25    | sudo yum install java-1.7.0-openjdk.x86_64 |
+>>>>>>> 9944bf0d660bd4b9aadc7c505495e91bcdac8926
 | elasticsearch-image               | 1.2.0       | [https://github.com/kzwang/elasticsearch-image](https://github.com/kzwang/elasticsearch-image) |
 | elasticsearch-mapper-attachments  | 2.4.2       | [https://github.com/elasticsearch/elasticsearch-mapper-attachments](https://github.com/elasticsearch/elasticsearch-mapper-attachments) |
 | rssriver (david pilato)           | 1.3.0       | [http://www.pilato.fr/rssriver/](http://www.pilato.fr/rssriver/) |
@@ -44,7 +59,11 @@ This plugins are just installed through the `bin/plugin -i` command. You must co
 
 **Clone this repository**
 
+<<<<<<< HEAD
 git clone git@github.com:ypereirareis/vagrant-elasticsearch-cluster.git
+=======
+git clone git@github.com:ecdb1902lr/ecdb-vagrant-elasticsearch-cluster.git
+>>>>>>> 9944bf0d660bd4b9aadc7c505495e91bcdac8926
 
 **WARNING**
 
@@ -295,3 +314,28 @@ Do forks, PR, and MRs !!!!
 * Add extra plugins or applications in the base box (redis, logstash, kibana, ...)
 * Add some configurations to illustrate split brain, unicast discovery, load balancing, snapshots, recovery...
 * Add possibility to configure cluster name, RAM per node AND hostnames through the shell (ENV vars)
+<<<<<<< HEAD
+=======
+
+
+
+License
+-------
+
+    This software is licensed under the Apache 2 license, quoted below.
+
+    Copyright 2009-2014 Elasticsearch <http://www.elasticsearch.org>
+
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    use this file except in compliance with the License. You may obtain a copy of
+    the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    License for the specific language governing permissions and limitations under
+    the License.
+
+>>>>>>> 9944bf0d660bd4b9aadc7c505495e91bcdac8926
