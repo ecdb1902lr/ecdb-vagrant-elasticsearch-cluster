@@ -15,5 +15,7 @@ EOT
     source /etc/profile
 fi
 
-screen -li | grep -q elastic || node-start
+# screen -li | grep -q elastic || node-start
+# New clean start method (Avoid using screen environment)
+node-start
 SCRIPT

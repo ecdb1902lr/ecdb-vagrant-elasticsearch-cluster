@@ -27,7 +27,26 @@ sudo /usr/share/elasticsearch/bin/plugin -install mobz/elasticsearch-head
 # install marvel
 sudo /usr/share/elasticsearch/bin/plugin -install elasticsearch/marvel/latest
 
-# Restart elasticsearch service
-sudo /bin/systemctl daemon-reload
-sudo /bin/systemctl enable elasticsearch.service
-sudo /bin/systemctl start elasticsearch.service
+# Install elasticsearch latest version puppet module
+sudo puppet module install elasticsearch-elasticsearch
+
+# Start elasticsearch service
+
+echo "### NOT starting on installation, Configure elasticsearch service to start automatically using systemd"
+echo " sudo systemctl daemon-reload"
+sudo systemctl daemon-reload
+echo " sudo systemctl enable elasticsearch.service"
+sudo systemctl enable elasticsearch.service
+echo "### You can start elasticsearch service by executing"
+echo " sudo systemctl start elasticsearch.service"
+sudo systemctl start elasticsearch.service
+
+# How to stop elasticsearch service
+echo "### To stop elasticsearch service do the following:"
+echo "systemctl --no-reload stop elasticsearch.service"
+echo "### OR the following:"
+echo "/etc/init.d/elasticsearch stop"
+
+# How to get the status of the elasticsearch service
+echo "### To status elasticsearch service do the following:"
+echo "/etc/init.d/elasticsearch status"

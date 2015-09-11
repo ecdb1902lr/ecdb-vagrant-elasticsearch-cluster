@@ -29,7 +29,7 @@
 # Cluster name identifies your cluster for auto-discovery. If you're running
 # multiple clusters on the same network, make sure you're using unique names.
 #
-cluster.name: "<%= @cluster_name.strip %>"
+cluster.name: "ecdb-es-cluster"
 
 
 #################################### Node #####################################
@@ -38,7 +38,7 @@ cluster.name: "<%= @cluster_name.strip %>"
 # from configuring them manually. You can tie this node to a specific name:
 #
 
-node.name: "<%= @node_name.strip %>"
+node.name: "thor"
 
 # Every node can be configured to allow or deny being eligible as the master,
 # and to allow or deny to store the data.
@@ -210,7 +210,7 @@ index.number_of_replicas: 1
 
 # Set both 'bind_host' and 'publish_host':
 #
-network.host: <%= @node_ip.strip %>
+network.host: 10.0.0.11
 
 # Set a custom port for the node to node communication (9300 by default):
 #
@@ -377,6 +377,6 @@ http.port: 9200
 #monitor.jvm.gc.old.info: 5s
 #monitor.jvm.gc.old.debug: 2s
 
-marvel.agent.enabled: <%= @node_marvel_enabled %>
-marvel.agent.exporter.es.hosts: ["<%= @cluster_ip.strip % 11 %>:9200"]
+marvel.agent.enabled: true
+marvel.agent.exporter.es.hosts: ["10.0.0.11:9200"]
 

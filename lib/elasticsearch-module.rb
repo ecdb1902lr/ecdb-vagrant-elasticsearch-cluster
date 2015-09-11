@@ -5,7 +5,7 @@ module Vagrant
 
             def initialize
                 @params = [
-                    'cluster_name' => ['CLUSTER_NAME', 'cluster_name', 'My amazing ES cluster'],
+                    'cluster_name' => ['CLUSTER_NAME', 'cluster_name', 'ecdb-es-cluster'],
                     'cluster_ip' => ['CLUSTER_IP_PATTERN', 'cluster_ip', '10.0.0.%d'],
                     'cluster_count' => ['CLUSTER_COUNT', 'cluster_size', 5],
                     'cluster_ram' => ['CLUSTER_RAM', 'cluster_ram', 512],
@@ -20,16 +20,6 @@ module Vagrant
                 "vm#{index}"
             end
 
-            def get_vm_ip(index)
-                ip = get_cluster_info 'cluster_ip'
-                ip % (10 + index)
-			#	self.logger.info "Node IP: #{ip}"
-            end
-
-            def get_node_name(index)
-                @names[index - 1]
-            end
-
             def get_cluster_info(index)
                 return ENV[@params[0][index][0]] if ENV[@params[0][index][0]]
                 return (File.read ".vagrant/#{@params[0][index][1]}") if File.exist? ".vagrant/#{@params[0][index][1]}"
@@ -41,6 +31,16 @@ module Vagrant
                 File.open(".vagrant/#{@params[0][index][1]}", 'w') do |file|
                     file.puts value.to_s
                 end
+            end
+
+            def get_vm_ip(index)
+                ip = get_cluster_info 'cluster_ip'
+                ip % (10 + index)
+			#	self.logger.info "Node IP: #{ip}"
+            end
+
+            def get_node_name(index)
+                @names[index - 1]
             end
 
             def get_config_template
@@ -59,7 +59,7 @@ module Vagrant
                     @cluster_ip = get_cluster_info 'cluster_ip'
                     @cluster_name = get_cluster_info 'cluster_name'
 
-                    @logger.info "Building configuration for #{vm}"
+                    @logger.info "--> Building configuration for #{vm}"
                     file.puts self.get_config_template.result(binding)
                 end unless File.exist? conf_file_format
             end
